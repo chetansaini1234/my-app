@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Set global font family */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Reset default margins and padding */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+}
+
+/* Set box-sizing globally */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Set html and body height and overflow */
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Hide scrollbars */
+body::-webkit-scrollbar {
+  display: none;
+}
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    /* Your CSS variables */
+    --background: 0 0% 100%;
+    /* ... rest of your variables */
+    --radius: 0.5rem;
+  }
+  .dark {
+    /* Dark mode variables */
+    --background: 0 0% 3.9%;
+    /* ... rest of your variables */
+  }
+}
+
+@layer base {
+  /* Removed universal border application */
+  body {
+    @apply bg-background text-foreground;
+  }
+}
